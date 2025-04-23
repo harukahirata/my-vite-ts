@@ -27,5 +27,8 @@ const shoppingList = [
   }
 ] satisfies shoppingItem[];
 
-export const getTotalPrice = shoppingList.reduce((sum, item) => sum + item.price, 0);
-console.log(getTotalPrice);
+export function getTotalPrice() {
+  shoppingList.reduce((sum, item) => sum + item.price, 0);
+}
+const totalPrice = getTotalPrice();
+console.log(totalPrice);
