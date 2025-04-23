@@ -4,7 +4,7 @@ type shoppingItem = {
   price: number;
 }
 
-const shoppingList: shoppingItem[] = [
+const shoppingList = [
   {
     id: 1,
     name: "Apple",
@@ -25,7 +25,7 @@ const shoppingList: shoppingItem[] = [
     name: "Fish",
     price: 100
   }
-];
+] satisfies shoppingItem[];
 
 export const getTotalPrice = shoppingList.reduce((sum, item) => sum + item.price, 0);
 console.log(getTotalPrice);
