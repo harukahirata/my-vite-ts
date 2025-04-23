@@ -1,4 +1,4 @@
-export const shoppingList = [
+const shoppingList = [
   {
     id: 1,
     name: "Apple",
@@ -22,5 +22,5 @@ export const shoppingList = [
 ];
 
 const shoppingListPrices = shoppingList.map((item) => item.price);
-const total = shoppingListPrices.reduce((sum, price) => sum + price, 0);
+export const total = shoppingListPrices.reduce((sum, price) => sum + price, 0);
 console.log(total);
