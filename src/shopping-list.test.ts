@@ -1,8 +1,8 @@
 import { describe, expect, test } from "vitest";
-import { total } from './shopping-list';
+import { getTotalPrice } from './shopping-list';
 
 describe("totalのテスト", () => {
 test("合計が900である", () => {
-expect(total).toBe(900);
+expect(getTotalPrice).toBe(900);
 })
 });
