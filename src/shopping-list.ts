@@ -1,4 +1,10 @@
-const shoppingList = [
+type shoppingItem = {
+  id: number;
+  name: string;
+  price: number;
+}
+
+const shoppingList: shoppingItem[] = [
   {
     id: 1,
     name: "Apple",
@@ -21,6 +27,5 @@ const shoppingList = [
   }
 ];
 
-const shoppingListPrices = shoppingList.map((item) => item.price);
-export const total = shoppingListPrices.reduce((sum, price) => sum + price, 0);
-console.log(total);
+export const getTotalPrice = shoppingList.reduce((sum, item) => sum + item.price, 0);
+console.log(getTotalPrice);
