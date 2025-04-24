@@ -27,8 +27,16 @@ const shoppingList = [
   }
 ] satisfies shoppingItem[];
 
-export function getTotalPrice() {
-  shoppingList.reduce((sum, item) => sum + item.price, 0);
-}
-const totalPrice = getTotalPrice();
-console.log(totalPrice);
+// export function getTotalPrice() {
+//   return shoppingList.reduce((sum, item) => sum + item.price, 0);
+// }
+// const totalPrice = getTotalPrice();
+// console.log(totalPrice);
+
+// お題6
+export function getAllName() {
+  const names = shoppingList.map((item) => item.name);
+  return names.join(", ");
+};
+const nameA = getAllName();
+console.log(nameA);
