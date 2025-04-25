@@ -1,4 +1,10 @@
-export const shoppingList = [
+type shoppingItem = {
+  id: number;
+  name: string;
+  price: number;
+}
+
+const shoppingList = [
   {
     id: 1,
     name: "Apple",
@@ -19,8 +25,20 @@ export const shoppingList = [
     name: "Fish",
     price: 100
   }
-];
+] satisfies shoppingItem[];
 
-const shoppingListPrices = shoppingList.map((item) => item.price);
-const total = shoppingListPrices.reduce((sum, price) => sum + price, 0);
-console.log(total);
+export function getTotalPrice() {
+  return shoppingList.reduce((sum, item) => sum + item.price, 0);
+}
+const totalPrice = getTotalPrice();
+console.log(totalPrice);
+
+// お題6
+export function getAllName() {
+  // const names = shoppingList.map((item) => item.name);
+  // return names.join(", ");
+  // ↓修正後
+  return shoppingList.map((item) =>item.name).join(", ");
+};
+const itemName = getAllName();
+console.log(itemName);
