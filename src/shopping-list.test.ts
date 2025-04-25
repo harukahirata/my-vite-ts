@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import { getAllNameArray } from './shopping-list';
+import { getAllNames } from './shopping-list';
 
 // describe("getAllName", () => {
 // test("出力は「Apple, Milk, Meat, Fish」", () => {
@@ -7,8 +7,8 @@ import { getAllNameArray } from './shopping-list';
 // })
 // });
 
-describe("getAllNameArray", () => {
+describe("getAllNames", () => {
 test("nameを配列に格納して返す"), () => {
-  expect(getAllNameArray()).toEqual(["Apple", "Milk", "Meat", "Fish"]
+  expect(getAllNames()).toEqual(["Apple", "Milk", "Meat", "Fish"]
   )};
 });

@@ -44,8 +44,8 @@ const itemName = getAllName();
 console.log(itemName);
 
   // お題7 shoppingList を map を使って name だけを格納した配列を作る関数を作る
-export function getAllNameArray() {
+export function getAllNames() {
   return shoppingList.map((item) => item.name);
 }
-const allNameArray = getAllNameArray();
-console.log(allNameArray);
+const allNames = getAllNames();
+console.log(allNames);
