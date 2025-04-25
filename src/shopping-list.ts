@@ -34,11 +34,18 @@ const totalPrice = getTotalPrice();
 console.log(totalPrice);
 
 // お題6
-export function getAllName() {
+function getAllName() {
   // const names = shoppingList.map((item) => item.name);
   // return names.join(", ");
   // ↓修正後
-  return shoppingList.map((item) =>item.name).join(", ");
+  shoppingList.map((item) =>item.name).join(", ");
 };
 const itemName = getAllName();
 console.log(itemName);
+
+  // お題7 shoppingList を map を使って name だけを格納した配列を作る関数を作る
+export function getAllNameArray() {
+  return shoppingList.map((item) => item.name);
+}
+const allNameArray = getAllNameArray();
+console.log(allNameArray);
