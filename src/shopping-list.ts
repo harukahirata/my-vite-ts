@@ -44,8 +44,15 @@ const itemName = getAllName();
 console.log(itemName);
 
 // 追加課題1
-export function getItemsByMoreThanPrice( price: number ): shoppingItem[] {
+function getItemsByMoreThanPrice( price: number ): shoppingItem[] {
   if (price <= 0) return [];
   return shoppingList.filter((item) => item.price >= price);
 }
 console.log(getItemsByMoreThanPrice(0));
+
+// 追加課題2
+export function getItemByName( name: string ): shoppingItem | string | undefined {
+  if (typeof name != "string") return "文字を入れてください";
+  return shoppingList.find((item) => item.name === name);
+}
+console.log(getItemByName("あいう"));
