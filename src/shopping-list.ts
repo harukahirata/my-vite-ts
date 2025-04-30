@@ -43,9 +43,9 @@ function getAllName() {
 const itemName = getAllName();
 console.log(itemName);
 
-  // お題7 shoppingList を map を使って name だけを格納した配列を作る関数を作る
-export function getAllNames() {
-  return shoppingList.map((item) => item.name);
+// 追加課題1
+export function getItemsByMoreThanPrice( price: number ): shoppingItem[] {
+  if (price <= 0) return [];
+  return shoppingList.filter((item) => item.price >= price);
 }
-const allNames = getAllNames();
-console.log(allNames);
+console.log(getItemsByMoreThanPrice(0));
