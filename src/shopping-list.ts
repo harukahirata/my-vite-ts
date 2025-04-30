@@ -38,7 +38,7 @@ function getAllName() {
   // const names = shoppingList.map((item) => item.name);
   // return names.join(", ");
   // ↓修正後
-  return shoppingList.map((item) =>item.name).join(", ");
+  shoppingList.map((item) =>item.name).join(", ");
 };
 const itemName = getAllName();
 console.log(itemName);
