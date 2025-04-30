@@ -18,4 +18,10 @@ describe("getItemsByMoreThanPrice", () => {
       { id: 3, name: 'Meat', price: 400 }
     ])
   })
-})
+  test("priceが-1のとき、空の配列を返す", () => {
+    expect(getItemsByMoreThanPrice(-1)).toEqual([]);
+  })
+  test("priceがNaNのとき、空の配列を返す", () => {
+    expect(getItemsByMoreThanPrice(NaN)).toEqual([]);
+  })
+});
