@@ -34,7 +34,7 @@ const totalPrice = getTotalPrice();
 console.log(totalPrice);
 
 // お題6
-function getAllName() {
+export function getAllName() {
   // const names = shoppingList.map((item) => item.name);
   // return names.join(", ");
   // ↓修正後
@@ -49,3 +49,10 @@ export function getItemsByMoreThanPrice( price: number ): shoppingItem[] {
   return shoppingList.filter((item) => item.price >= price);
 }
 console.log(getItemsByMoreThanPrice(0));
+
+// 追加課題2
+export function getItemByName( name: string ): shoppingItem | string | undefined {
+  if (typeof name != "string") return "文字を入れてください";
+  return shoppingList.find((item) => item.name === name);
+}
+console.log(getItemByName("あいう"));
