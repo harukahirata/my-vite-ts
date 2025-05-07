@@ -15,7 +15,7 @@ const limitPrice = 300;
 export function getAffordableTreats() {
   const total = treats.reduce((sum, item) => sum + item.price, 0);
   if (total <= limitPrice) {
-    console.log("合計金額は300円以下です。");
+    console.log("合計金額は" + limitPrice + "円以下です。");
   } else if (total > limitPrice) {
     // 配列treatsの中からpriceの最大値を求める
     const maxPrice = Math.max(...treats.map(item => item.price));
