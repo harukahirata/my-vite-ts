@@ -17,11 +17,14 @@ const treats = [
 
 const limitPrice = 300;
 
-export function getAffordableTreats(): Treat[] | void {
+export function getAffordableTreats(treats: Treat[]): Treat[] | string {
+  if (treats.length === 0) {
+    return "カゴの中身が空です。";
+  }
+
   const total = treats.reduce((sum, item) => sum + item.price, 0);
   if (total <= limitPrice) {
-    console.log("合計金額は" + limitPrice + "円以下です。");
-    return;
+    return "合計金額は" + limitPrice + "円以下です。";
   }
   if (total > limitPrice) {
     // 配列treatsの中からpriceの最大値を求める
@@ -35,8 +38,13 @@ export function getAffordableTreats(): Treat[] | void {
     //   ...treats.slice(0, index),
     //   ...treats.slice(index + 1),
     // ];
+
+    // newTreatsを作成しなくてもreturnでそのまま返すこともできる
+    // return treats.filter((_, i) => i !== removeIndex);
+
     return newTreats;
   }
+  return "エラーです";
 }
-const shoppingBasket = getAffordableTreats();
+const shoppingBasket = getAffordableTreats(treats);
 console.log(shoppingBasket);
