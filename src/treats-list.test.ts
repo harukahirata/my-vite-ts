@@ -21,8 +21,20 @@ describe("validateTreat", () => {
 });
 
 describe("getAffordableTreats", () => {
+  test("配列の中身が空の場合、「カゴの中身が空です。」とエラーメッセージが出る", () => {
+    expect(getAffordableTreats([])).toBe("カゴの中身が空です。");
+  });
+  test("配列の合計金額がlimitPriceに満たない場合、エラーメッセージが出る", () => {
+    expect(getAffordableTreats([
+      { name: "ラムネ", price: 100, count: 1 }
+    ])).toBe("合計金額は300円以下です。");
+  });
   test("チョコレートを除いたものが出力される", () => {
-    expect(getAffordableTreats()).toEqual([
+    expect(getAffordableTreats([
+        { name: "チョコレート", price: 120, count: 1 },
+        { name: "ポテトチップス", price: 110, count: 1 },
+        { name: "ラムネ", price: 100, count: 1 }
+    ])).toEqual([
       { name: 'ポテトチップス', price: 110, count: 1 },
       { name: 'ラムネ', price: 100, count: 1 }
     ])
